@@ -1,0 +1,88 @@
+/* SECCIÓN 1 */
+.cont-nosotros-1 {
+    height: 500px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%),
+        url(../../../../public/img/nosotros/imagen-fondo2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* SECCIÓN 2 */
+.cont-nosotros-2 {
+    background-color: white;
+}
+.art-iconos {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding-bottom: 60px;
+}
+.art-iconos p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #404040;
+    padding-top: 10px;
+}
+.art-iconos span {
+    color: #93b55a;
+}
+
+/* SECCIÓN 3 */
+#txt-person {
+    padding-top: 0px;
+}
+.art-estilos {
+    width: 750px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.art-estilos p {
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.art-estilos img {
+    width: 100px;
+}
+#min {color: #7aabbf;}
+#aventura {color: #92bf7a;}
+#playa {color: #d2cc67;}
+#hogar {color: #bf927a;}
+.btn-personalizar {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 1000px) {
+    .cont-nosotros-1 {
+        height: 250px;
+    }
+    .parrafo {
+        width: 350px;
+    }
+    .parrafo p {
+        font-weight: normal;
+        line-height: 34px;
+    }
+    .art-iconos {
+        width: 350px;
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+    .art-iconos p {
+        margin-bottom: 40px;
+    }
+    .art-estilos {
+        width: 250px;
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+    .art-estilos p {
+        margin-bottom: 40px;
+    }
+}

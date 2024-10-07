@@ -1,0 +1,186 @@
+/* HEADER */
+header {
+    font-weight: 600;
+}
+.cont-head-1 {
+    height: 40px;
+    background-color: #93b55a;
+    font-size: 14px;
+}
+.barra-superior {
+    height: 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contacto {
+    display: flex;
+}
+.contacto p {
+    margin-bottom: 0px;
+}
+.contacto i {
+    padding-right: 5px;
+    font-size: 20px;
+}
+.contacto #num-tel {
+    padding-right: 2em;
+}
+.redes {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.redes i {
+    font-size: 30px;
+}
+.redes a {
+    color: white;
+}
+.cont-head-2 {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.conth2 {
+    background-color: white;
+}
+.cont-head-2 a {
+    color: #404040;
+}
+.menu-responsive {
+    display: none;
+    font-size: 20px;
+}
+.logo {
+    width: 18%;
+}
+.logo img {
+    max-width: 100%;
+}
+#nav-secciones {
+    width: 60%;
+}
+.secciones {
+    display: flex;
+    justify-content: space-around;
+}
+.secciones a {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.barra-seccion {
+    width: 80%;
+    margin: auto;
+    padding: 1.6px 0px;
+    background-color: #93b55a;
+    top: 36px;
+    position: relative;
+}
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    font-size: 14px;
+    width: 17.5%;
+}
+.login ul {
+    padding-right: 20px;
+}
+.login a:hover {
+    cursor: pointer;
+}
+#ingresar {
+    color: #93b55a;
+}
+.motorhome img {
+    width: 70px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 6px;
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid #cecece;
+    border-radius: 5px;
+    color: #404040;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    outline: none;
+    border: 2px solid rgb(54, 129, 226);
+}
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 35px;
+}
+.error {
+    color: crimson;
+    margin-bottom: 20px;
+}
+.error p {
+    margin-bottom: 5px;
+}
+.modal-dialog {
+    width: 360px;
+}
+.modal-content {
+    border: 0px;
+}
+.modal-header {
+    flex-direction: column-reverse;
+    border-bottom: 0px;
+}
+.modal-body {
+    padding: 10px 45px;
+    padding-bottom: 45px;
+}
+
+@media (max-width: 1000px) {
+    .cont-head-1 {
+        height: 25px;
+        font-size: 10px;
+    }
+    .barra-superior {
+        height: 25px;
+    }
+    .contacto i {
+        font-size: 14px;
+    }
+    .redes {
+        width: 70px;
+    }
+    .redes i {
+        font-size: 18px;
+    }
+    .cont-head-2 {
+        height: 60px;
+    }
+    .menu-responsive {
+        display: block;
+    }
+    #nav-secciones {
+        display: none;
+    }
+    .logo {
+        width: 25%;
+        margin-left: 50px;
+    }
+    .login {
+        font-size: 8px;
+        width: 25%;
+    }
+    .login ul {
+        padding-right: 10px;
+    }
+    .motorhome img {
+        width: 40px;
+    }
+}

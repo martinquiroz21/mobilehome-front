@@ -1,0 +1,227 @@
+/* SECCIÓN 1 */
+.cont-personalizar-1 {
+    height: 500px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%),
+        url(../../../../public/img/personalizar/imagen-fondo3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.cont-personalizar-1 p {
+    padding-top: 200px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+
+/* SECCIÓN 2 */
+.cont-personalizar-2 {
+    background-color: white;
+}
+.cuadros {
+    width: 52.55%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+.cuadros div {
+    width: 184px;
+    height: 85px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.cuadros div:hover {
+    cursor: pointer;
+}
+.cuadros p {
+    color: white;
+    font-size: 24.5px;
+    font-weight: 600;
+}
+#cuadro1 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(173, 22, 22, 0.5)),
+        url(../../../../public/img/personalizar/aventura.jpg);
+}
+#cuadro2 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(101, 185, 31, 0.5)),
+        url(../../../../public/img/personalizar/hogareño.jpg);
+}
+#cuadro3 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(168, 24, 113, 0.5)),
+        url(../../../../public/img/personalizar/minimalista.jpg);
+}
+#cuadro4 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(161, 163, 19, 0.5)),
+        url(../../../../public/img/personalizar/playa.jpg);
+}
+#cuadro5 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(163, 77, 19, 0.5)),
+        url(../../../../public/img/personalizar/rustico.jpg);
+}
+#cuadro1, #cuadro2, #cuadro3, #cuadro4, #cuadro5 {
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* SECCIÓN 3 */
+.cont-personalizar-3 {
+    width: 45.7%;
+    margin: auto;
+    padding-bottom: 60px;
+}
+.interior360 {
+    background-image: url(../../../../public/img/personalizar/mh-interior.jpg);
+    height: 576px;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: white;
+}
+.interior360 p {
+    font-size: 25px;
+    font-weight: 600;
+}
+.interior360 i {
+    font-size: 60px;
+}
+.marco {
+    padding: 20px;
+    height: 93%;
+}
+.tour-brujula {
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+}
+.icono360 {
+    height: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.opciones {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+}
+.paleta-dis {
+    width: 50%;
+}
+.adicionales {
+    width: 35%;
+}
+#paleta {
+    font-size: 30px;
+    text-align: start;
+    padding-top: 0px;
+}
+.colores {
+    display: flex;
+    justify-content: space-between;
+}
+.colores div {
+    width: 92px;
+    height: 45px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.40);
+}
+#color1 {
+    background-color: #e2d4c7;
+}
+#color2 {
+    background-color: #b4906c;
+}
+#color3 {
+    background-color: #fdc781;
+}
+#color4 {
+    background-color: #795039;
+}
+#distribucion {
+    font-size: 30px;
+    text-align: start;
+    padding-top: 50px;
+}
+.interiores {
+    display: flex;
+    justify-content: space-between;
+}
+.interiores img {
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.40);
+}
+#adicional {
+    padding-top: 0px;
+    text-align: start;
+}
+.opciones-ad {
+    display: flex;
+}
+.cuadrados p {
+    padding: 13px;
+    background-color: #93b55a;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+.txt-adicional {
+    margin-left: 18px;
+}
+.txt-adicional p {
+    font-size: 22px;
+    color: #404040;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.guardar {
+    width: 70%;
+    height: 74px;
+    margin: auto;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.40);
+}
+.guardar p {
+    font-size: 24px;
+    color: #404040;
+    font-weight: 600;
+}
+.guardar a {
+    background-color: #93b55a;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 12px 27px 12px 27px;
+    border-radius: 8px;
+}
+
+@media (max-width: 1000px) {
+    .cont-personalizar-1 {
+        height: 250px;
+    }
+    .cont-personalizar-1 p {
+        padding-top: 100px;
+        font-size: 19px;
+    }
+}

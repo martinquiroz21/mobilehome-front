@@ -1,0 +1,129 @@
+<header>
+    <div class="cont-head-1">
+        <div class="container barra-superior">
+            <div class="contacto">
+                <i class="fas fa-phone-alt"></i>
+                <p id="num-tel">110800300</p>
+                <i class="fas fa-envelope"></i>
+                <p>info&#64;mobilehome.com</p>
+            </div>
+            <div class="redes">
+                <a href="https://www.facebook.com/">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://twitter.com/?lang=es">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+                <a href="https://www.instagram.com/">
+                    <i class="fab fa-instagram-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="conth2">
+        <div class="container cont-head-2">
+            <div class="menu-responsive">
+                <div class="dropdown pt-2">
+                    <a href="#"
+                        class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-bars"></i>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                        <li><a class="dropdown-item" [routerLink]="['/home']">Home</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/personalizar']">Personalizar</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/productos']">Productos</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/servicios']">Servicios</a></li>
+                        <li><a class="dropdown-item" [routerLink]="['/nosotros']">Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logo">
+                <a [routerLink]="['/home']" style="padding: 25px 0px;">
+                    <img src="img/logomb.png" alt="logo mobilehome" width="200">
+                </a>
+            </div>
+            <nav id="nav-secciones">
+                <ul class="secciones">
+                    <li>
+                        <a [routerLink]="['/personalizar']" [ngStyle]="{color: seccion=='personalizar' ? '#93b55a' : '#404040'}">PERSONALIZAR</a>
+                        <div [ngStyle]="{visibility: seccion=='personalizar' ? 'visible' : 'hidden'}" class="barra-seccion"></div>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/productos']" [ngStyle]="{color: seccion=='productos' ? '#93b55a' : '#404040'}">PRODUCTOS</a>
+                        <div [ngStyle]="{visibility: seccion=='productos' ? 'visible' : 'hidden'}" class="barra-seccion"></div>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/servicios']" [ngStyle]="{color: seccion=='servicios' ? '#93b55a' : '#404040'}">SERVICIOS</a>
+                        <div [ngStyle]="{visibility: seccion=='servicios' ? 'visible' : 'hidden'}" class="barra-seccion"></div>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/nosotros']" [ngStyle]="{color: seccion=='nosotros' ? '#93b55a' : '#404040'}">NOSOTROS</a>
+                        <div [ngStyle]="{visibility: seccion=='nosotros' ? 'visible' : 'hidden'}" class="barra-seccion"></div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="login">
+                <ul>
+                    <li>
+                        <a data-bs-toggle="modal" data-bs-target="#cuadroLogin" id="ingresar">Ingresar</a>
+                    </li>
+                    <li>
+                        <a data-bs-toggle="modal" data-bs-target="#cuadroRegistro">Crear Cuenta</a>
+                    </li>
+                </ul>
+                <div class="motorhome">
+                    <a [routerLink]="['/mismotorhomes']">
+                        <img src="img/motorhome.png" alt="" width="100px">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Cuadro login -->
+<div class="modal fade" id="cuadroLogin" tabindex="-1" aria-labelledby="cuadroLoginLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cuadroLoginLabel">Iniciar sesión</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="POST" onsubmit="return validar()">
+                    <label for="email">E-mail:</label>
+                    <input path="email" type="email" id="email" name="email"/>
+                    <label for="contrasenia">Contraseña:</label>
+                    <input path="contrasenia" type="password" id="contrasenia" name="contrasenia"/>
+                    <div id="mensaje" class="error"></div>
+                    <input class="boton" id="inicio-sesion" type="submit" value="Ingresar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cuadro registro -->
+<div class="modal fade" id="cuadroRegistro" tabindex="-1" aria-labelledby="cuadroRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cuadroRegistroLabel">Registrarse</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="POST" onsubmit="return validar()">
+                    <label for="nombre">Nombre:</label>
+                    <input path="nombre" type="text" id="nombre" name="nombre"/>
+                    <label for="apellido">Apellido:</label>
+                    <input path="apellido" type="text" id="apellido" name="apellido"/>
+                    <label for="email">E-mail:</label>
+                    <input path="email" type="email" id="email" name="email"/>
+                    <label for="contrasenia">Contraseña:</label>
+                    <input path="contrasenia" type="password" id="contrasenia" name="contrasenia"/>
+                    <div id="mensaje" class="error"></div>
+                    <input class="boton" id="registrar" type="submit" value="Crear cuenta">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,173 @@
+/* SECCIÓN 1 */
+.cont-productos-1 {
+    height: 500px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%),
+        url(../../../../public/img/productos/imagen-fondo4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.cont-productos-1 p {
+    padding-top: 200px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+/* SECCIÓN 2 */
+.cont-productos-2 {
+    background-color: white;
+}
+
+/* SECCIÓN 3 */
+.cont-productos-3 {
+    width: 52.55%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 750px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.cont-productos-3 div {
+    width: 300px;
+    height: 208px;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.45);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    border-radius: 8px;
+}
+.cont-productos-3 article:hover {
+    cursor: pointer;
+}
+.cont-productos-3 p {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+#cuadro-1 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/familiar.png);
+}
+#cuadro-2 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/ducato.png);
+}
+#cuadro-3 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/trailer.png);
+}
+#cuadro-4 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/familiar-lujo.png);
+}
+#cuadro-5 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/combi.png);
+}
+#cuadro-6 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/aventura.png);
+}
+#cuadro-7 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/casa-rodante.jpg);
+}
+#cuadro-8 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/camper-benivan.jpg);
+}
+#cuadro-9 {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.0),
+        rgba(0, 0, 0, 0.5)),
+        url(../../../../public/img/productos/motorhome-megadic.jpg);
+}
+.cont-productos-3 div {
+    background-size: cover;
+    background-position: center;
+}
+.txt {
+    padding-right: 50px;
+}
+p.precio {
+    font-size: 30px;
+}
+.cont-productos-4 {
+    width: 52.55%;
+    margin: auto;
+    padding-bottom: 60px;
+}
+.cuadro-personalizar {
+    height: 200px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 60px;
+}
+#imagen-mh1 {
+    background: url(../../../../public/img/index/motorh1.jpg);
+    margin: 10px 0px 10px 10px;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+#descripcion-1 {
+    width: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #404040;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.boton {
+    background-color: #93b55a;
+    color: white;
+    padding: 8px;
+    width: 45%;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.cont-productos-4 a:hover {
+    background: #829e4e;
+    cursor: pointer;
+}
+.cuadro-personalizar {
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
+}
+
+@media (max-width: 1000px) {
+    .cont-productos-1 {
+        height: 250px;
+    }
+    .cont-productos-1 p {
+        padding-top: 100px;
+        font-size: 22px;
+    }
+}
