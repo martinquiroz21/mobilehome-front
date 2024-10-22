@@ -74,7 +74,7 @@
                 </ul>
                 <div class="motorhome">
                     <a [routerLink]="['/mismotorhomes']">
-                        <img src="img/motorhome.png" alt="" width="100px">
+                        <img src="img/motorhome_render.png" title="Mis motorhomes" width="100px">
                     </a>
                 </div>
             </div>
@@ -90,11 +90,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="POST" onsubmit="return validar()">
+                <form action="#" method="POST" onsubmit="return validarInicioSesion()">
                     <label for="email">E-mail:</label>
-                    <input path="email" type="email" id="email" name="email"/>
+                    <input path="email" type="email" id="emailLogin" name="email"/>
                     <label for="contrasenia">Contraseña:</label>
-                    <input path="contrasenia" type="password" id="contrasenia" name="contrasenia"/>
+                    <input path="contrasenia" type="password" id="contraseniaLogin" name="contrasenia"/>
                     <div id="mensaje" class="error"></div>
                     <input class="boton" id="inicio-sesion" type="submit" value="Ingresar">
                 </form>
@@ -111,7 +111,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="POST" onsubmit="return validar()">
+                <form action="#" method="POST" onsubmit="return validarRegistro()">
                     <label for="nombre">Nombre:</label>
                     <input path="nombre" type="text" id="nombre" name="nombre"/>
                     <label for="apellido">Apellido:</label>

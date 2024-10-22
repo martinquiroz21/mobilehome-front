@@ -1,0 +1,43 @@
+<div class="container contenedor">
+    <div class="cont-serv">
+        <div class="imgServ">
+            <img src="img/servicios/{{servicio.imagen}}">
+        </div>
+        <div class="infoServ">
+            <div>
+                <h3 id="nombreServ">{{servicio.titulo}}</h3>
+                <p class="fw-bold fs-6">PRECIO A CONVENIR</p>
+            </div>
+            <div>
+                <a class="boton btn-serv" data-bs-toggle="modal" data-bs-target="#cuadroServicio">Solicitar servicio</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="descripcion">
+            <h4>Descripción</h4>
+            <p>{{servicio.descripcion}}</p>
+        </div>
+    </div>
+</div>
+<!-- Cuadro de solicitud de servicio -->
+<div class="modal fade" id="cuadroServicio" tabindex="-1" aria-labelledby="cuadroServicioLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cuadroServicioLabel">Solicitar servicio</h1>
+                <button type="button"  class="btn-close" #botonCerrar data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formServicio" (ngSubmit)="onSubmit()">
+                    <label for="mensajeServ">Mensaje:</label>
+                    <textarea formControlName="mensajeServ" id="mensajeServ" cols="20" rows="10" placeholder="Escribe algo"></textarea>
+                    <div *ngIf="formServicio.get('mensajeServ')?.invalid && formServicio.get('mensajeServ')?.touched" class="error">
+                        <p *ngIf="formServicio.get('mensajeServ')?.errors?.minlength">El mensaje tiene que tener 10 caracteres como minimo.</p>
+                    </div>
+                    <input [disabled]="formServicio.invalid" class="boton" id="enviarMsj" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, Event, NavigationEnd } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { Location } from '@angular/common';
 import { filter } from 'rxjs/operators';
@@ -16,8 +16,18 @@ export class NavbarComponent implements OnInit {
 
   seccion: String;
 
-  constructor(private router: Router, private location: Location) {
+  constructor(private router: Router, private location: Location, private viewportScroller: ViewportScroller) {
     this.seccion = "";
+    this.desplazarPaginaAInicio();
+  }
+
+  desplazarPaginaAInicio() {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        // Desplazarse al inicio de la página en cada navegación
+        this.viewportScroller.scrollToPosition([0, 0]);
+      }
+    });
   }
 
   ngOnInit(): void {
