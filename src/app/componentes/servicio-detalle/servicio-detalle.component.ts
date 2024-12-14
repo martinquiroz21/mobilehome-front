@@ -16,13 +16,12 @@ import { CommonModule } from '@angular/common';
 })
 export class ServicioDetalleComponent implements OnInit {
 
-  @ViewChild('botonCerrar')cerrarModal!:ElementRef;
   id: number;
   servicio: Servicio;
   mensaje: String;
   formServicio: FormGroup;
 
-  constructor(private router: ActivatedRoute, private route: Router, private renderer:Renderer2, private servicioService: ServiciosService, private formBuilder: FormBuilder) {}
+  constructor(private router: ActivatedRoute, private route: Router, private servicioService: ServiciosService, private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.id = this.router.snapshot.params['id'];
@@ -42,8 +41,6 @@ export class ServicioDetalleComponent implements OnInit {
   onSubmit() {
     if (this.formServicio.valid) {
       console.log('Formulario válido:', this.formServicio.value);
-      var botonModal = this.cerrarModal.nativeElement;
-      this.renderer.
       this.route.navigate(['/servicios']);
     } else {
       console.log('Formulario inválido');

@@ -3,25 +3,28 @@
     margin-top: 80px;
     margin-bottom: 80px;
 }
-.cont-serv {
+.cont-prod {
     display: flex;
 }
-.infoServ {
+.infoProd {
 	margin-left: 40px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
-#nombreServ {
-	margin-bottom: 16px;
+.infoProd p {
+    color: #545454;
+}
+#nombreProd {
+	margin-bottom: 8px;
     line-height: normal;
 }
-.imgServ {
+.imgProd {
     width: 420px;
     height: 280px;
 }
-.imgServ img {
+.imgProd img {
     width: 420px;
     height: 280px;
 }
@@ -30,41 +33,30 @@
     width: 100%;
     text-align: center;
 }
-.btn-serv {
-    background-color: #747474;
-}
-.btn-serv:hover {
-    background-color: #646464;
-}
 .descripcion h4, .caracteristicas h4 {
     line-height: normal;
     margin-top: 60px;
 	margin-bottom: 20px;
 }
-textarea {
-    width: 100%;
-    padding: 6px;
-    display: block;
-    box-sizing: border-box;
-    border: 2px solid #cecece;
-    border-radius: 5px;
-    color: #404040;
-    font-size: 16px;
-    font-weight: normal;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    height: 150px;
+li {
+    list-style: disc;
 }
-textarea:focus {
-    outline: none;
-    border: 2px solid rgb(54, 129, 226);
+ul {
+    padding-left: 2rem;
+}
+#totalCompra p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4C4C4C;
 }
 .error p {
     color: crimson;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 .modal-dialog {
-    width: 500px;
+    width: 450px;
 }
 .modal-content {
     border: 0px;
@@ -77,6 +69,28 @@ textarea:focus {
     padding: 10px 45px;
     padding-bottom: 45px;
 }
+input[type="number"] {
+    width: 100%;
+    padding: 6px;
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid #cecece;
+    border-radius: 5px;
+    color: #404040;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+input[type="number"]:focus {
+    outline: none;
+    border: 2px solid rgb(54, 129, 226);
+}
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
 
 @media (max-width: 1000px) {
     .contenedor {
@@ -84,18 +98,18 @@ textarea:focus {
         margin-top: 40px;
         margin-bottom: 40px;
     }
-    .cont-serv {
+    .cont-prod {
         flex-direction: column;
     }
-    .infoServ {
+    .infoProd {
         margin-left: 0px;
         margin-top: 20px;
     }
-    .imgServ {
+    .imgProd {
         width: auto;
         height: auto;
     }
-    .imgServ img {
+    .imgProd img {
         width: 100%;
         height: auto;
     }

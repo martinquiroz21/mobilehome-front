@@ -93,9 +93,6 @@ header {
 .login a:hover {
     cursor: pointer;
 }
-#ingresar {
-    color: #93b55a;
-}
 .motorhome img {
     width: 70px;
 }
@@ -121,11 +118,8 @@ input[type="submit"] {
     width: 100%;
     margin-top: 35px;
 }
-.error {
-    color: crimson;
-    margin-bottom: 20px;
-}
 .error p {
+    color: crimson;
     margin-bottom: 5px;
 }
 .modal-dialog {

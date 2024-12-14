@@ -18,7 +18,7 @@
     <div class="row row-cols-1 row-cols-lg-3 g-5">
       <div *ngFor="let servicio of servicios" class="col">
         <a [routerLink]="['/servicios/servicio-detalle', servicio.id]">
-          <div class="cuadro-servicio" style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url(img/servicios/{{servicio.imagen}})">
+          <div class="cuadro-servicio" style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4)), url(img/servicios/{{servicio.imagen}})">
             <p class="text-uppercase">{{servicio.titulo}}</p>
           </div>
         </a>

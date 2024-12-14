@@ -64,12 +64,23 @@
                 </ul>
             </nav>
             <div class="login">
-                <ul>
+                <ul *ngIf="estaElUsuarioLogueado() === false">
                     <li>
-                        <a data-bs-toggle="modal" data-bs-target="#cuadroLogin" id="ingresar">Ingresar</a>
+                        <a data-bs-toggle="modal" data-bs-target="#cuadroLogin" [ngStyle]="{color: '#93b55a'}">Ingresar</a>
                     </li>
                     <li>
                         <a data-bs-toggle="modal" data-bs-target="#cuadroRegistro">Crear Cuenta</a>
+                    </li>
+                </ul>
+                <ul *ngIf="estaElUsuarioLogueado() === true">
+                    <li class="dropdown">
+                        <a id="ingresar" [ngStyle]="{color: '#93b55a'}" data-bs-toggle="dropdown" aria-expanded="false">{{obtenerNombreUsuario()}}</a>
+                        <div class="dropdown-menu text-small">
+                            <a class="dropdown-item" (click)="cerrarSesion()">Cerrar sesión</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/mismotorhomes']">Mis motorhomes</a>
                     </li>
                 </ul>
                 <div class="motorhome">
@@ -82,7 +93,7 @@
     </div>
 </header>
 <!-- Cuadro login -->
-<div class="modal fade" id="cuadroLogin" tabindex="-1" aria-labelledby="cuadroLoginLabel" aria-hidden="true">
+<div class="modal fade" id="cuadroLogin" tabindex="-2" aria-labelledby="cuadroLoginLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -90,13 +101,18 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="POST" onsubmit="return validarInicioSesion()">
-                    <label for="email">E-mail:</label>
-                    <input path="email" type="email" id="emailLogin" name="email"/>
-                    <label for="contrasenia">Contraseña:</label>
-                    <input path="contrasenia" type="password" id="contraseniaLogin" name="contrasenia"/>
-                    <div id="mensaje" class="error"></div>
-                    <input class="boton" id="inicio-sesion" type="submit" value="Ingresar">
+                <form [formGroup]="formLogin" (ngSubmit)="loguearse()">
+                    <label for="emailLogin">E-mail:</label>
+                    <input formControlName="emailLogin" type="email" id="emailLogin" name="emailLogin"/>
+                    <label for="contraseniaLogin">Contraseña:</label>
+                    <input formControlName="contraseniaLogin" type="password" id="contraseniaLogin" name="contraseniaLogin"/>
+                    <div *ngIf="formLogin.get('emailLogin')?.invalid && formLogin.get('emailLogin')?.touched" class="error">
+                        <p *ngIf="formLogin.get('emailLogin')?.errors?.email">El email ingresado no es correcto.</p>
+                    </div>
+                    <div *ngIf="formLogin.get('contraseniaLogin')?.invalid && formLogin.get('contraseniaLogin')?.touched" class="error">
+                        <p *ngIf="formLogin.get('contraseniaLogin')?.errors?.minlength">La contraseña debe tener 4 caracteres como minimo.</p>
+                    </div>
+                    <input [disabled]="formLogin.invalid" class="boton" id="inicio-sesion" type="submit" value="Ingresar" data-bs-dismiss="modal" aria-label="Close">
                 </form>
             </div>
         </div>
@@ -111,17 +127,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="POST" onsubmit="return validarRegistro()">
+                <form [formGroup]="formRegistro" (ngSubmit)="registrarse()">
                     <label for="nombre">Nombre:</label>
-                    <input path="nombre" type="text" id="nombre" name="nombre"/>
+                    <input formControlName="nombre" type="text" id="nombre" name="nombre"/>
                     <label for="apellido">Apellido:</label>
-                    <input path="apellido" type="text" id="apellido" name="apellido"/>
+                    <input formControlName="apellido" type="text" id="apellido" name="apellido"/>
                     <label for="email">E-mail:</label>
-                    <input path="email" type="email" id="email" name="email"/>
+                    <input formControlName="email" type="email" id="email" name="email"/>
                     <label for="contrasenia">Contraseña:</label>
-                    <input path="contrasenia" type="password" id="contrasenia" name="contrasenia"/>
-                    <div id="mensaje" class="error"></div>
-                    <input class="boton" id="registrar" type="submit" value="Crear cuenta">
+                    <input formControlName="contrasenia" type="password" id="contrasenia" name="contrasenia"/>
+                    <div *ngIf="formRegistro.get('nombre')?.invalid && formRegistro.get('nombre')?.touched" class="error">
+                        <p *ngIf="formRegistro.get('nombre')?.errors?.required">El campo nombre es requerido.</p>
+                    </div>
+                    <div *ngIf="formRegistro.get('apellido')?.invalid && formRegistro.get('apellido')?.touched" class="error">
+                        <p *ngIf="formRegistro.get('apellido')?.errors?.required">El campo apellido es requerido.</p>
+                    </div>
+                    <div *ngIf="formRegistro.get('email')?.invalid && formRegistro.get('email')?.touched" class="error">
+                        <p *ngIf="formRegistro.get('email')?.errors?.email">El email ingresado no es correcto.</p>
+                        <p *ngIf="formRegistro.get('email')?.hasError('emailTaken')">Este email ya está registrado.</p>
+                    </div>
+                    <div *ngIf="formRegistro.get('contrasenia')?.invalid && formRegistro.get('contrasenia')?.touched" class="error">
+                        <p *ngIf="formRegistro.get('contrasenia')?.errors?.minlength">La contraseña debe tener 4 caracteres como minimo.</p>
+                    </div>
+                    <input [disabled]="formRegistro.invalid" class="boton" id="registrar" type="submit" value="Crear cuenta" data-bs-dismiss="modal" aria-label="Close">
                 </form>
             </div>
         </div>

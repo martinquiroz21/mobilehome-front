@@ -1,0 +1,68 @@
+<div class="container contenedor">
+    <div class="mb-3">
+        <a [routerLink]="['/home']">Home</a> / <a [routerLink]="['/productos']">Productos</a> / <span>{{producto.titulo}}</span>
+    </div>
+    <div class="cont-prod">
+        <div class="imgProd">
+            <img src="img/productos/{{producto.imagen}}">
+        </div>
+        <div class="infoProd">
+            <div>
+                <h3 id="nombreProd">{{producto.titulo}}</h3>
+                <p class="fw-bold fs-5">${{producto.precio}}</p>
+                <p class="mt-2">Categoría: {{producto.categoria}}</p>
+            </div>
+            <div *ngIf="estaElUsuarioLogueado() === true">
+                <a class="boton" data-bs-toggle="modal" data-bs-target="#cuadroCompraProducto">Comprar producto</a>
+            </div>
+            <div *ngIf="estaElUsuarioLogueado() === false">
+                <a class="boton" (click)="errorLogin()">Comprar producto</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="descripcion">
+            <h4>Descripción</h4>
+            <p>{{producto.descripcion}}</p>
+        </div>
+        <div class="caracteristicas">
+            <h4>Otras características</h4>
+            <ul>
+                <li>Estilo de decoración: {{datosEstilo.titulo}}</li>
+                <li>Paleta de colores: {{producto.paletaColores}}</li>
+                <div *ngFor="let adicional of adicionales">
+                    <li>{{adicional.nombre}}</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Cuadro de compra -->
+<div class="modal fade" id="cuadroCompraProducto" tabindex="-3" aria-labelledby="cuadroCompraProductoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cuadroCompraProductoLabel">Realizar compra</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formCompra" (ngSubmit)="comprar()">
+                    <label for="nroTrj">Número de la tarjeta*</label>
+                    <input formControlName="nroTrj" type="number" id="nroTrj"/>
+                    <label for="cv">CVV*</label>
+                    <input formControlName="cv" type="number" id="cv"/>
+                    <div *ngIf="formCompra.get('nroTrj')?.invalid && formCompra.get('nroTrj')?.touched" class="error">
+                        <p *ngIf="formCompra.get('nroTrj')?.errors?.pattern">El numero de tarjeta debe ser de 6 digitos</p>
+                    </div>
+                    <div *ngIf="formCompra.get('cv')?.invalid && formCompra.get('cv')?.touched" class="error">
+                        <p *ngIf="formCompra.get('cv')?.errors?.pattern">El codigo de seguridad debe ser de 3 digitos</p>
+                    </div>
+                    <div id="totalCompra">
+                        <p><span>Total </span><span>${{producto.precio}}</span></p>
+                    </div>
+                    <input [disabled]="formCompra.invalid" class="boton" id="realizarCompra" type="submit" value="Pagar" data-bs-dismiss="modal" aria-label="Close">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

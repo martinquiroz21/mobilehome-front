@@ -1,4 +1,7 @@
 <div class="container contenedor">
+    <div class="mb-3">
+        <a [routerLink]="['/home']">Home</a> / <a [routerLink]="['/servicios']">Servicios</a> / <span>{{servicio.titulo}}</span>
+    </div>
     <div class="cont-serv">
         <div class="imgServ">
             <img src="img/servicios/{{servicio.imagen}}">
@@ -6,7 +9,7 @@
         <div class="infoServ">
             <div>
                 <h3 id="nombreServ">{{servicio.titulo}}</h3>
-                <p class="fw-bold fs-6">PRECIO A CONVENIR</p>
+                <p class="fw-bold fs-6" style="color: #545454;">PRECIO A CONVENIR</p>
             </div>
             <div>
                 <a class="boton btn-serv" data-bs-toggle="modal" data-bs-target="#cuadroServicio">Solicitar servicio</a>
@@ -21,12 +24,12 @@
     </div>
 </div>
 <!-- Cuadro de solicitud de servicio -->
-<div class="modal fade" id="cuadroServicio" tabindex="-1" aria-labelledby="cuadroServicioLabel" aria-hidden="true">
+<div class="modal fade" id="cuadroServicio" tabindex="-4" aria-labelledby="cuadroServicioLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="cuadroServicioLabel">Solicitar servicio</h1>
-                <button type="button"  class="btn-close" #botonCerrar data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form [formGroup]="formServicio" (ngSubmit)="onSubmit()">
@@ -35,7 +38,7 @@
                     <div *ngIf="formServicio.get('mensajeServ')?.invalid && formServicio.get('mensajeServ')?.touched" class="error">
                         <p *ngIf="formServicio.get('mensajeServ')?.errors?.minlength">El mensaje tiene que tener 10 caracteres como minimo.</p>
                     </div>
-                    <input [disabled]="formServicio.invalid" class="boton" id="enviarMsj" type="submit" value="Enviar">
+                    <input [disabled]="formServicio.invalid" class="boton" id="enviarMsj" type="submit" value="Enviar" data-bs-dismiss="modal" aria-label="Close">
                 </form>
             </div>
         </div>

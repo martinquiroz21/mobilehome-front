@@ -14,7 +14,6 @@
     font-weight: 500;
 }
 
-
 /* SECCIÓN 2 */
 .cont-index-2 {
     width: 850px;
@@ -94,12 +93,11 @@
     text-align: center;
 }
 
-
 /* Sombras */
 .cuadros div, .cuadro-personalizar, .cuadro-servicio {
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
-    -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
-    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
 }
 
 @media (max-width: 800px) {

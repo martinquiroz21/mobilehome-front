@@ -1,98 +1,156 @@
-<main>
+<div>
     <!-- SECCIÓN 1 -->
-    <section class="cont-personalizar-1">
+    <div class="cont-personalizar-1">
         <p>Personaliza tu <strong>motorhome</strong> como mas te guste <br>que nosotros te lo armamos</p>
-    </section>
-
+    </div>
     <!-- SECCIÓN 2 -->
-    <section class="cont-personalizar-2">
-        <article>
+    <div class="cont-personalizar-2">
+        <div>
+            <p class="sub-estilo">Crea tu propio vehiculo y compralo</p>
+            <div class="container parrafo pb-0">
+                <p>Personaliza un vehiculo motorhome con dimensiones de 7,5 x 2,2 x 3 mts. Las decoraciones se ajustan a las dimensiones del vehiculo para que su viaje sea lo mas comodo y reconfortante posible. Cada estilo tiene un coste diferente. Además, podras ponerle el nombre que quieras a tu propia casa sobre ruedas personalizada.</p>
+            </div>
+        </div>
+        <div>
             <p class="sub-estilo">Elije un estilo</p>
-        </article>
-        <article class="cuadros">
-            <div id="cuadro1">
-                <p>Aventura</p>
+        </div>
+        <div class="container cuadros">
+            <div *ngFor="let estilo of estilos" class="cuadro-estilo" style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.3)), url(img/personalizar/{{estilo.imagen}})" (click)="seleccionarEstilo(estilo.id)" #cuadrosEstilos>
+                    <p>{{estilo.titulo}}</p>
             </div>
-            <div id="cuadro2">
-                <p>Hogareño</p>
-            </div>
-            <div id="cuadro3">
-                <p>Minimalista</p>
-            </div>
-            <div id="cuadro4">
-                <p>Playa</p>
-            </div>
-            <div id="cuadro5">
-                <p>Rústico</p>
-            </div>
-        </article>
-    </section>
-
+        </div>
+    </div>
     <!-- SECCIÓN 3 -->
-    <section class="cont-personalizar-3">
-        <article class="interior360">
-            <div class="marco">
-                <div class="tour-brujula">
-                    <p>Tour 3D</p>
-                    <i class="far fa-compass"></i>
+    <div class="cont-personalizar-3">
+        <div class="container seleccion-estilo animate__animated animate__fadeIn" #estiloAnimado>
+            <div class="img-estilo">
+                <img src="img/personalizar/{{estiloSeleccionado?.imagen}}">
+            </div>
+            <div class="txt-estilo">
+                <h3>{{estiloSeleccionado?.titulo}}</h3>
+                <p>{{estiloSeleccionado?.descripcion}}</p>
+            </div>
+        </div>
+        <div class="paleta-colores">
+            <p class="sub-estilo" id="paleta">Paleta de colores</p>
+            <div class="container colores">
+                <div class="cuadro-color" (click)="seleccionarColor(0, 'Defecto')">
+                    <div class="color" style="background-color: transparent" #paletaColores></div>
+                    <p>Por defecto</p>
                 </div>
-                <div class="icono360">
-                    <img src="./img/personalizar/icono360.png">
+                <div class="cuadro-color" (click)="seleccionarColor(1, 'Beige')">
+                    <div class="color" style="background-color: #D8CAAD" #paletaColores></div>
+                    <p>Beige</p>
+                </div>
+                <div class="cuadro-color" (click)="seleccionarColor(2, 'Azul')">
+                    <div class="color" style="background-color: #2d90e0" #paletaColores></div>
+                    <p>Azul</p>
+                </div>
+                <div class="cuadro-color" (click)="seleccionarColor(3, 'Gris')">
+                    <div class="color" style="background-color: #bbbbbb" #paletaColores></div>
+                    <p>Gris</p>
+                </div>
+                <div class="cuadro-color" (click)="seleccionarColor(4, 'Blanco')">
+                    <div class="color" style="background-color: #ffffff" #paletaColores></div>
+                    <p>Blanco</p>
+                </div>
+                <div class="cuadro-color" (click)="seleccionarColor(5, 'Cafe')">
+                    <div class="color" style="background-color: #93795E" #paletaColores></div>
+                    <p>Café</p>
+                </div>
+                <div class="cuadro-color" (click)="seleccionarColor(6, 'Amarillo')">
+                    <div class="color" style="background-color: #eedd43" #paletaColores></div>
+                    <p>Amarillo</p>
+                </div>
+                <div class="cuadro-color" (click)="seleccionarColor(7, 'Verde')">
+                    <div class="color" style="background-color: #6AAC4D" #paletaColores></div>
+                    <p>Verde</p>
                 </div>
             </div>
-        </article>
-        <article class="opciones">
-            <div class="paleta-dis">
-                <p class="sub-estilo" id="paleta">Paleta de colores</p>
-                <div class="colores">
-                    <div id="color1"></div>
-                    <div id="color2"></div>
-                    <div id="color3"></div>
-                    <div id="color4"></div>
-                </div>
-                <p class="sub-estilo" id="distribucion">Distribución interior</p>
-                <div class="interiores">
-                    <div id="interior1">
-                        <img src="img/personalizar/interior1.jpg">
-                    </div>
-                    <div id="interior2">
-                        <img src="img/personalizar/interior2.jpg">
-                    </div>
-                    <div id="interior3">
-                        <img src="img/personalizar/interior3.jpg">
-                    </div>
-                </div>
-            </div>
-            <div class="adicionales">
-                <p class="sub-estilo" id="adicional">Adicionales</p>
-                <div class="opciones-ad">
-                    <div class="cuadrados">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div class="txt-adicional">
-                        <p>Asientos de cuero</p>
-                        <p>Cortinas black out</p>
-                        <p>Iluminación led</p>
-                        <p>Aire acondicionado</p>
-                        <p>Vidrios espejados</p>
-                        <p>Cama levadiza</p>
-                        <p>Paneles solares</p>
-                        <p>Suelos laminados</p>
+        </div>
+        <div class="adicionales">
+            <p class="sub-estilo">Adicionales</p>
+            <div class="container row row-cols-1 row-cols-lg-4 g-4 g-lg-5">
+                <div *ngFor="let adicional of adicionales">
+                    <div class="cuadro-adicional" (click)="seleccionarAdicional(adicional.id)">
+                        <p class="seleccion-adicional" #cuadrosAdicionales></p>
+                        <p class="txt-adicional">{{adicional.nombre}}</p>
                     </div>
                 </div>
             </div>
-        </article>
-        <article class="guardar">
-            <p>Guardá tus <br>cambios</p>
-            <a href="#">Ingresar</a>
-            <a href="#">Crear cuenta</a>
-        </article>
-    </section>
-</main>
+        </div>
+        <div class="nombremh">
+            <p class="sub-estilo">Ponele un nombre a tu motorhome</p>
+            <div class="container cuadro-nombremh">
+                <input type="text" (input)="onInputChange($event)" id="nombreMotorhome" name="nombreMotorhome" placeholder="Nombre del motorhome"/>
+            </div>
+        </div>
+        <div class="container info-pago">
+            <div class="tablero-precios">
+                <div id="precios" class="row row-cols-1 row-cols-lg-2">
+                    <div class="precio-estilo">
+                        <div>
+                            <p>Vehículo motorhome</p>
+                            <p>${{precioMotorhome}}</p>
+                        </div>
+                    </div>
+                    <div class="precio-estilo">
+                        <div>
+                            <p>Estilo {{estiloSeleccionado.titulo}}</p>
+                            <p>${{estiloSeleccionado.precio}}</p>
+                        </div>
+                    </div>
+                    <div class="precio-estilo">
+                        <div>
+                            <p>Paleta color {{paletaSeleccionada}}</p>
+                            <p>${{precioPaleta}}</p>
+                        </div>
+                    </div>
+                    <div class="precio-estilo" *ngFor="let adicional of adicionalesSelec">
+                        <div>
+                            <p>{{adicional.nombre}}</p>
+                            <p>${{adicional.precio}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="total">
+                    <p>Total ${{total}}</p>
+                </div>
+            </div>
+            <div class="pago">
+                <p>Chequeá todos los precios!</p>
+                <a *ngIf="estaElUsuarioLogueado() === true" class="boton" data-bs-toggle="modal" data-bs-target="#cuadroCompra">Comprar</a>
+                <a *ngIf="estaElUsuarioLogueado() === false" class="boton" (click)="errorLogin()">Comprar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Cuadro de compra -->
+<div class="modal fade" id="cuadroCompra" tabindex="-5" aria-labelledby="cuadroCompraLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="cuadroCompraLabel">Realizar compra</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formCompra" (ngSubmit)="comprar()">
+                    <label for="nroTrj">Número de la tarjeta*</label>
+                    <input formControlName="nroTrj" type="number" id="nroTrj"/>
+                    <label for="cv">CVV*</label>
+                    <input formControlName="cv" type="number" id="cv"/>
+                    <div *ngIf="formCompra.get('nroTrj')?.invalid && formCompra.get('nroTrj')?.touched" class="error">
+                        <p *ngIf="formCompra.get('nroTrj')?.errors?.pattern">El numero de tarjeta debe ser de 6 digitos</p>
+                    </div>
+                    <div *ngIf="formCompra.get('cv')?.invalid && formCompra.get('cv')?.touched" class="error">
+                        <p *ngIf="formCompra.get('cv')?.errors?.pattern">El codigo de seguridad debe ser de 3 digitos</p>
+                    </div>
+                    <div id="totalCompra">
+                        <p><span>Total </span><span>${{total}}</span></p>
+                    </div>
+                    <input [disabled]="formCompra.invalid" class="boton" id="realizarCompra" type="submit" value="Pagar" data-bs-dismiss="modal" aria-label="Close">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

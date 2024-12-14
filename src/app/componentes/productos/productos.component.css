@@ -20,110 +20,73 @@
 }
 
 /* SECCIÓN 3 */
-.cont-productos-3 {
-    width: 52.55%;
-    margin: auto;
+.menu-orden {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    align-content: space-between;
-    height: 750px;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.cont-productos-3 div {
-    width: 300px;
-    height: 208px;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.45);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 10px;
-    border-radius: 8px;
-}
-.cont-productos-3 article:hover {
+.dropdown-menu a {
     cursor: pointer;
 }
-.cont-productos-3 p {
-    font-size: 20px;
-    font-weight: 600;
-    color: white;
+.menu-categoria {
+    border:1px solid gray;
+    padding-left: 15px;
 }
-#cuadro-1 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/familiar.png);
+#txt-resultados {
+    color: #404040;
+    font-weight: 500;
+    align-self: center;
 }
-#cuadro-2 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/ducato.png);
+.cont-productos-3 {
+    width: 960px;
+    margin-bottom: 60px;
 }
-#cuadro-3 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/trailer.png);
-}
-#cuadro-4 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/familiar-lujo.png);
-}
-#cuadro-5 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/combi.png);
-}
-#cuadro-6 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/aventura.png);
-}
-#cuadro-7 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/casa-rodante.jpg);
-}
-#cuadro-8 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/camper-benivan.jpg);
-}
-#cuadro-9 {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.0),
-        rgba(0, 0, 0, 0.5)),
-        url(../../../../public/img/productos/motorhome-megadic.jpg);
-}
-.cont-productos-3 div {
+.cuadro-producto {
     background-size: cover;
     background-position: center;
+    width: 100%;
+    height: 195px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
-.txt {
-    padding-right: 50px;
+.info-producto {
+    font-weight: 600;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    line-height: normal;
 }
-p.precio {
-    font-size: 30px;
+#titulo {
+    font-size: 18px;
+    padding-right: 10px;
+    align-content: center;
 }
+#precio {
+    font-size: 26px;
+    align-self: flex-end;
+}
+
+/* SECCIÓN 4 */
 .cont-productos-4 {
-    width: 52.55%;
-    margin: auto;
-    padding-bottom: 60px;
+    width: 850px;
 }
 .cuadro-personalizar {
     height: 200px;
-    background-color: white;
     border-radius: 8px;
     display: flex;
     margin-bottom: 60px;
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.3);
 }
 #imagen-mh1 {
     background: url(../../../../public/img/index/motorh1.jpg);
@@ -133,7 +96,7 @@ p.precio {
     background-position: center;
     border-radius: 5px;
 }
-#descripcion-1 {
+#descripcion-pers {
     width: 50%;
     font-size: 20px;
     font-weight: 600;
@@ -144,23 +107,6 @@ p.precio {
     justify-content: center;
     text-align: center;
 }
-.boton {
-    background-color: #93b55a;
-    color: white;
-    padding: 8px;
-    width: 45%;
-    border-radius: 5px;
-    margin-top: 30px;
-}
-.cont-productos-4 a:hover {
-    background: #829e4e;
-    cursor: pointer;
-}
-.cuadro-personalizar {
-    -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
-    -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
-    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.45);
-}
 
 @media (max-width: 1000px) {
     .cont-productos-1 {
@@ -169,5 +115,37 @@ p.precio {
     .cont-productos-1 p {
         padding-top: 100px;
         font-size: 22px;
+    }
+    .parrafo {
+        width: 350px;
+    }
+    .parrafo p {
+        font-weight: normal;
+        line-height: 34px;
+    }
+    .cont-productos-3, .cont-productos-4  {
+        width: 350px;
+    }
+    .menu-orden {
+        padding: 0px;
+    }
+    .cuadro-personalizar {
+        height: 320px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
+        margin-bottom: 40px;
+    }
+    #imagen-mh1 {
+        width: 100%;
+        height: 150px;
+        margin: 0px;
+    }
+    #descripcion-pers {
+        width: 100%;
+    }
+    .boton {
+        width: 60%;
+        margin-top: 18px;
     }
 }

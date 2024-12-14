@@ -1,1 +1,39 @@
-<p>mis-motorhomes works!</p>
+<div>
+    <!-- SECCIÓN 1 -->
+    <div class="cont-mismh-1">
+        <h1>Mis motorhomes</h1>
+    </div>
+    <!-- SECCIÓN 2 -->
+    <div class="cont-mismh-2">
+        <div *ngFor="let productoUsuario of productosUsuario" class="container cuadro-producto">
+            <div class="tit-fecha">
+                <p class="tit-prod">{{productoUsuario.producto.titulo}} <span *ngIf="productoUsuario.producto.esPersonalizado == true">(Personalizado)</span></p>
+                <p>Fecha de compra {{productoUsuario.fechaCompra}}</p>
+            </div>
+            <div class="info-producto">
+                <div class="img-prod">
+                    <img src="img/productos/{{productoUsuario.producto.imagen}}">
+                </div>
+                <div class="descripcion-prod">
+                    <div>
+                        <div class="desc-prod">
+                            <h5>Categoria:</h5>
+                            <p>{{productoUsuario.producto.categoria}}</p>
+                        </div>
+                        <div class="desc-prod">
+                            <h5>Estilo:</h5>
+                            <p>{{productoUsuario.producto.estilo.titulo}}</p>
+                        </div>
+                        <div class="desc-prod">
+                            <h5>Costo total:</h5>
+                            <p>${{productoUsuario.producto.precio}}</p>
+                        </div>
+                    </div>
+                    <div class="btn-verDetalles">
+                        <a [routerLink]="['/productos/producto-detalle', productoUsuario.producto.id]" class="boton">Ver mas detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

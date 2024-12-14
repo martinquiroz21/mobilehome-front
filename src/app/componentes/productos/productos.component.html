@@ -1,85 +1,56 @@
-<main>
+<div>
     <!-- SECCIÓN 1 -->
     <div class="cont-productos-1">
         <p>Elije uno de nuestros <strong>productos</strong> <br>a excelentes precios</p>
     </div>
-
     <!-- SECCIÓN 2 -->
-    <section class="cont-productos-2">
+    <div class="cont-productos-2">
         <p class="sub-estilo">Motorhomes</p>
-        <article class="parrafo">
-            <p>Nuestros productos hacen que su vehículo recreativo sea único, atendiendo <br>de esta manera las
-                exigencias del mercado actual y ofreciendo una buena <br>optimización del espacio de su motorhome
-            </p>
-        </article>
-    </section>
-
+        <div class="container parrafo">
+            <p>Nuestros productos hacen que su vehículo recreativo sea único, atendiendo de esta manera las exigencias del mercado actual y ofreciendo una buena optimización del espacio de su motorhome</p>
+        </div>
+    </div>
     <!-- SECCIÓN 3 -->
-    <section class="cont-productos-3">
-        <a href="#">
-            <div id="cuadro-1">
-                <p class="txt">Familiar <br>4 personas</p>
-                <p class="precio">$799,99</p>
+    <div class="container cont-productos-3">
+        <div class="menu-orden">
+            <div id="txt-resultados">
+                <p>Mostrando {{numeroResultados}} resultados</p>
             </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-2">
-                <p class="txt">Familiar <br>4 personas</p>
-                <p class="precio">$739,99</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-3">
-                <p class="txt">Trailer <br>2 personas</p>
-                <p class="precio">$110,00</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-4">
-                <p class="txt">Familiar <br>de lujo</p>
-                <p class="precio">$949,99</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-5">
-                <p class="txt">Kombi <br>playera</p>
-                <p class="precio">$144,99</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-6">
-                <p class="txt">Espaciosa <br>aventura</p>
-                <p class="precio">$749,99</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-7">
-                <p class="txt">Casa <br>rodante</p>
-                <p class="precio">$120,00</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-8">
-                <p class="txt">Camper <br>benivan</p>
-                <p class="precio">$850,00</p>
-            </div>
-        </a>
-        <a href="#">
-            <div id="cuadro-9">
-                <p class="txt">Megadic</p>
-                <p class="precio">$1,800,00</p>
-            </div>
-        </a>
-    </section>
-
-    <!-- SECCIÓN 4 -->
-    <section class="cont-productos-4">
-        <div class="cuadro-personalizar">
-            <div id="imagen-mh1"></div>
-            <div id="descripcion-1">
-                <p>Elegí uno de nuestros vehiculos <br>y personalizalo como quieras</p>
-                <a href="personalizar.html" class="boton">Personalizar</a>
+            <div class="dropdown">
+                <button class="menu-categoria btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{nombreFiltro}}
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)="obtenerListaDeProductos()">Todos los productos</a></li>
+                    <li><a class="dropdown-item" (click)="obtenerProductosPorCategoria('Motorhome')">Motorhomes</a></li>
+                    <li><a class="dropdown-item" (click)="obtenerProductosPorCategoria('Trailer')">Trailers</a></li>
+                    <li><a class="dropdown-item" (click)="obtenerProductosPorCategoria('Mini motorhome')">Mini motorhomes</a></li>
+                    <li><a class="dropdown-item" (click)="obtenerProductosPorCategoria('Casa rodante')">Casas rodantes</a></li>
+                </ul>
+              </div>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 g-5">
+            <div *ngFor="let producto of productos" class="col">
+                <a [routerLink]="['/productos/producto-detalle', producto.id]">
+                    <div class="cuadro-producto"
+                        style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4)), url(img/productos/{{producto.imagen}})">
+                        <div class="info-producto">
+                            <p id="titulo">{{producto.titulo}}</p>
+                            <p id="precio">${{producto.precio}}</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
-</main>
+    </div>
+    <!-- SECCIÓN 4 -->
+    <div class="container cont-productos-4">
+        <div class="cuadro-personalizar">
+            <div id="imagen-mh1"></div>
+            <div id="descripcion-pers">
+                <p>Elegí y personaliza uno<br>de nuestros vehiculos</p>
+                <a [routerLink]="['/personalizar']" class="boton mt-4">Personalizar</a>
+            </div>
+        </div>
+    </div>
+</div>
